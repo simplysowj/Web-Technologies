@@ -1,0 +1,121 @@
+I/o model
+:
+two types:blocking ,non blocking
+Blocking:Blocking other code
+non blocking:
+continuing the code without blocking
+node js supports non blocking i/o model.
+Every module has its own function wrapper.
+Module:
+Object representing current module
+exports:defines exported constructs
+exports is property of module
+module.exports:empty object by default
+Require:
+Function to import constructs exported from other module.
+require=module.exports
+
+Path:
+Absolute path,relative path
+
+Absolute path:
+Exact path
+optionally prepended with /(forward slash)
+eg:require('users/desktop/app.js')
+
+Relative path:
+Path relative to current path
+prepended with .(dot)
+eg:require('./app.js')
+method 1 to export:
+module.exports.calculateArea = calculateArea;
+module.exports.calculateCircumference = calculateCircumference;
+methos 2:
+
+// module.exports={
+//     calculateArea:calculateArea,
+//     calculateCircumference:calculateCircumference
+// };
+method 3:
+module.exports.calculateArea=(r)=>PI*r*r;
+module.exports.calculateCircumference = (r) => 2* PI * r;
+
+exports and module.exports are not always same
+for method 1 and method 3 we can replace module.exports with exports keyword.
+but for method it is creating different object so export keyword should not be used.
+instead of directly  replacing first replace with exports keyword then assign exports to module.exports like
+module.exports=exports;
+
+__filename gives the absolute path of filenamepm package
+npm:node package manager
+npm is used by node.js to find different packages and can be used.
+package is a collection of libraries or modules
+
+
+npm install nodemon --save--dev
+nodemon is package name
+--save--dev is the option
+there are multiple options we can use 
+--save--prod alis -p:
+this option is by default:
+prod dependencies
+installs the dependencies on the production server
+--save--dev alias -D:
+dev dependencies
+installs the dependencies on the development server
+--save--optional alias -O:
+optional dependencies
+--no--save:
+prevents saving to dependencies
+-g:
+install globally on local system
+chalk:for beautification(npm package)
+core modules:available by default without installation eg console,http,https
+to see the available modules:
+console.log(require('module').builtinModules);
+fs is one built in module which client side js doenot provide.(local file management)
+
+custom modules/packages:
+1.created and defined by user
+2.No installation required
+3.Importing required using require function()
+Third party modules/packages:
+1.created by others
+2.Installation required via npm
+3.importing required via require function
+core modules/packages:
+1.Available by default
+2.no installation required
+3.importing required via require function
+
+Asynchronous:
+callback occurs when failure occurs
+synchronous:
+error will be caught by try and catch methods
+json:
+javascript object notation
+in js keys cam be written in single quotes or double quotes or without keys id:12,name='sowji'
+
+but in json keys should be in double quotes "id":12,"name":"sowji"
+
+except object or array we cant declare any value to variable unlike in js
+let name="souji"
+name:name is allowed in js not in json
+function is not allowed in key value pair .
+value is string or number or boolean or array
+comments are not allowed in json
+objects inside array is allowed
+[{key1:value1...},{...}]
+array can be inside another array
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+import React, { Component } from 'react';
+import Header from "./Header";
+import './App.css';
+
+class App extends Component {
+
+  render() {
+    
+    return (
+      <div className="component-container">
+        <Header heading="Phone Directory" />
+        <div className="component-body-container">
+          <button className="add-btn"  >Add</button>
+          <div className="grid-container heading-container">
+            <span className="grid-item name-heading">Name </span>
+            <br />
+
+            <span className="grid-item phone-heading">Phone </span>
+          </div>
+          {
+            this.props.subscribersList.map(sub => {
+              return <div  className="grid-container" key={sub.id}>
+                <span className="grid-item">{sub.name}</span>
+<br/>
+                <span className="grid-item">{sub.phone}</span>
+                <span className="grid-item action-btn-container">
+                 <button className="custom-btn delete-btn">Delete</button>
+                </span>
+                {/* <button className="custom-btn delete-btn" onClick={this.clickHandler.bind(this, "Delete Clicked")} >Delete</button>
+               */}
+              </div>
+            })
+          }
+          
+        </div>
+      </div>
+    );
+  }
+}
+
+
+
+export default App;

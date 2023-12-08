@@ -1,0 +1,45 @@
+import React , {Component} from 'react';
+import AddSubcriber from './AddSubscriber';
+import App from './App';
+
+class PhoneDirectory extends Component{
+    constructor(){
+        super();
+        this.state = {
+            subscribersList: [
+                {
+                    id:1,
+                    name:"sowji",
+                    phone:789978
+                },
+                {
+                    id:2,
+                    name:"leshya",
+                    phone:87899
+                }
+            ]
+        }
+
+    }
+    addSubscriberHandler = (newSubscriber) => {
+        let subscribersList = this.state.subscribersList;
+        if(subscribersList.length>0){
+            newSubscriber.id=subscribersList[subscribersList.length -1].id+1;
+        }
+        else{
+            newSubscriber.id=1;
+        }
+        subscribersList.push(newSubscriber);
+        this.setState({subscribersList:subscribersList});
+
+    }
+    render(){
+        return(
+           // <AddSubcriber addSubscriberHandler={this.addSubscriberHandler}/>
+           <App subscribersList={this.state.subscribersList}/>
+        )
+
+        
+    }
+}
+export default PhoneDirectory;
